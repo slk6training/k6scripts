@@ -29,9 +29,6 @@ pipeline {
         }
         stage('Setup') {
             steps {
-                dir('petStore') {
-                   sh 'yarn k6:setup'
-                }
                 sh script: 'sudo chown -R $USER:$(id -g -n) .', label: "Set file system ownership"
                 sh script: 'sudo chmod -R 775 .', label: "Set file system permissions"
             }
