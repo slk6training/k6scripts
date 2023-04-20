@@ -29,7 +29,7 @@ pipeline {
         }
         stage('Setup') {
             steps {
-                dir('performance') {
+                dir('petStore') {
                    sh 'yarn k6:setup'
                 }
                 sh script: 'sudo chown -R $USER:$(id -g -n) .', label: "Set file system ownership"
@@ -38,7 +38,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh script: "docker run --name k6-docker-${env.SERVICE_ID} --rm -v $WORKSPACE/performance:/perf -w /perf --ipc host --network host -p 8125:8125/udp -e RAMP_UP=${RAMP_UP} -e HOLD_DURATION=${HOLD_DURATION} -e TEAR_DOWN=${TEAR_DOWN} -e TARGET_LOAD=${TARGET_LOAD} -i ${env.k6_DOCKER_IMAGE} --out datadog --tag test_run_id=${env.SERVICE_ID}_${currentBuild.number} --quiet run main.js", label: "Run perf test"
+                sh script: "docker run --name k6-docker-${env.SERVICE_ID} --rm -v $WORKSPACE/petStore:/perf -w /perf --ipc host --network host -p 8125:8125/udp -e RAMP_UP=${RAMP_UP} -e HOLD_DURATION=${HOLD_DURATION} -e TEAR_DOWN=${TEAR_DOWN} -e TARGET_LOAD=${TARGET_LOAD} -i ${env.k6_DOCKER_IMAGE} --tag test_run_id=${env.SERVICE_ID}_${currentBuild.number} --quiet run main.js", label: "Run perf test"
             }
             post {
                 always {
