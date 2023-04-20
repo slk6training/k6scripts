@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     echo 'Hello world!'
-                    loadScripts()
+                    //loadScripts()
                    // commonScripts.cancelPreviousBuilds()
                 }
             }
