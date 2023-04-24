@@ -6,7 +6,6 @@ pipeline {
                 echo 'Installing k6'
                 sh 'pwd'
                 sh 'ls -al'
-                echo 'sahani@123' 
                 sh 'sudo chmod +x setup_k6.sh'
                 sh 'ls -al'
                 sh './setup_k6.sh'
