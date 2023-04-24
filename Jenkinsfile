@@ -6,7 +6,7 @@ pipeline {
                 echo 'Installing k6'
                 sh 'pwd'
                 sh 'ls -al'
-                sh 'sudo chmod +x setup_k6.sh'
+               // sh 'sudo chmod +x setup_k6.sh'
                 sh './setup_k6.sh'
                 echo 'Running K6 performance tests...'
                 sh 'k6 run petStore/main.js'
