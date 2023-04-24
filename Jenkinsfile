@@ -6,7 +6,8 @@ pipeline {
                 echo 'Installing k6'
                 sh 'pwd'
                 sh 'ls -al'
-                sh 'sudo chmod +x setup_k6.sh'
+                def password = "sahani@123"
+                sh 'echo ${password} | sudo -S chmod +x setup_k6.sh'
                 sh 'ls -al'
                 sh './setup_k6.sh'
                 echo 'Running K6 performance tests...'
