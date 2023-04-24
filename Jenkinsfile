@@ -5,6 +5,7 @@ pipeline {
             steps {
                 echo 'Installing k6'
                 sh 'pwd'
+                sh '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
                 sh 'brew install k6'
                // sh 'echo sahani@123 | sudo -S chmod +x setup_k6.sh'
                // sh 'ls -al'
