@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This directory contains [k6](https://k6.io/) performance test scripts for Order Service.
+This directory contains [k6](https://k6.io/) performance test scripts for [petstore server](https://petstore.swagger.io/#/).
 
 ## Prerequisites
 
