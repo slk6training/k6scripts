@@ -13,7 +13,6 @@ Note: You can overwrite these default values by setting them as environment vari
 ## How to run
 
 ```
-
 $ k6 run main.js
 ```
 
