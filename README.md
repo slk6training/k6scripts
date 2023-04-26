@@ -1,4 +1,4 @@
-# Order Service Performance Tests
+# k6 Performance Tests
 
 ## Introduction
 
